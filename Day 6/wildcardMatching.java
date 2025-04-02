@@ -1,9 +1,8 @@
-class Solution {
+class wildcardMatching {
   public boolean isMatch(String s, String p) {
       int n = s.length();
       int m = p.length();
       boolean[][] dp = new boolean[n + 1][m + 1];
-
       dp[0][0] = true;
 
       for (int j = 1; j <= m; j++) {
@@ -26,9 +25,11 @@ class Solution {
 
       return dp[n][m];
   }
-
   public static void main(String[] args) {
-      Solution sol = new Solution();
-      System.out.println(sol.isMatch("aa", "*"));
+    wildcardMatching sol = new wildcardMatching();
+      String s = "adceb";
+      String p = "abc";
+      boolean result = sol.isMatch(s, p);
+      System.out.println(result);
   }
 }
